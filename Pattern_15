@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n-i;j++)
+        {
+            cout<<"  ";
+        }
+         int rownumber=i;
+            int flag=0;
+        for(int j=1;j<=2*i-1;j++)
+        {
+            cout<<rownumber<<" ";
+            if(rownumber==1)
+            {
+               // cout<<"in";
+                flag=1;
+            }
+            if(flag==0)
+            {
+                rownumber--;
+            }
+            else if(flag==1)
+            {
+               rownumber++;  
+            }
+        }
+        for(int j=1;j<=n-i;j++)
+        {
+            cout<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
