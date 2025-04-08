@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    for(int row=1;row<=n;row++)
+    {
+        // 1&2 rows
+        for(int col=1;col<=n;col++)
+        {
+            if(row==1)
+            {
+                if(col==1 || col==n)
+                {
+                    cout<<"*";
+                }
+            }
+            else if(row==2)
+            {
+                if(col==2 || col==(n-1))
+                {
+                    cout<<"*";
+                }
+            }
+        }
+        // 3-5 rows
+        string prev=" ";
+        for(int col=1;col<=n;col++)
+        {
+           if(prev==" ")
+           {
+                cout<<"*";
+                prev="*";
+           }
+           else
+           {
+               cout<<" ";
+               prev=" ";
+           }
+        }
+        // n & n-1 row
+        for(int col=1;col<=n;col++)
+        {
+            if(row==n-1)
+            {
+                if(col==2 || col==(n-1))
+                {
+                    cout<<"*";
+                }
+            }
+            else
+            {
+                if(col==1 || col==n)
+                {
+                    cout<<"*";
+                }
+            }
+        }
+        cout<<endl;
+    }
+    return 0;
+}        
